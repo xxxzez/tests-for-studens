@@ -43,7 +43,7 @@ export default function TitleForm() {
           name="title"
           disabled={!state.isEdit}
           value={state.titleForm.title ? state.titleForm.title : ''}
-          placeholder="Judul formulir"
+          placeholder="Назва форми"
           onChange={(e) => handleChange(e)}
           className={`${
             state.isDark
@@ -55,7 +55,7 @@ export default function TitleForm() {
           disabled={!state.isEdit}
           name="desc"
           value={state.titleForm.desc ? state.titleForm.desc : ''}
-          placeholder="Deskripsi formulir"
+          placeholder="Опис форми"
           onChange={(e) => handleChange(e)}
           className={`${
             state.isDark
