@@ -10,7 +10,7 @@ export default function Home() {
   const { state } = useContext(GlobalState)
 
   const fetchUserData = useCallback(async () => {
-    const forms = await getDataFromDatabase(`tests`)
+    const { forms } = await getDataFromDatabase(`users/${state.uid}`)
     console.log(forms)
     if (forms) {
       const data = []
@@ -23,7 +23,7 @@ export default function Home() {
     } else {
       setUserForms([])
     }
-  }, [])
+  }, [state.uid])
   useEffect(() => {
     state.uid && fetchUserData()
     return () => setUserForms([])
