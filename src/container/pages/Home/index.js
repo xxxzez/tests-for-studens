@@ -10,7 +10,8 @@ export default function Home() {
   const { state } = useContext(GlobalState)
 
   const fetchUserData = useCallback(async () => {
-    const { forms } = await getDataFromDatabase(`users/${state.uid}`)
+    const forms = await getDataFromDatabase(`tests`)
+    console.log(forms)
     if (forms) {
       const data = []
       // MEMBUAT OBJECT MENJADI ARRAY
@@ -22,7 +23,7 @@ export default function Home() {
     } else {
       setUserForms([])
     }
-  }, [state.uid])
+  }, [])
   useEffect(() => {
     state.uid && fetchUserData()
     return () => setUserForms([])
@@ -36,15 +37,15 @@ export default function Home() {
             !state.isDark ? 'text-gray-700' : 'text-gray-100'
           } font-semibold text-lg `}
         >
-          Останні форми
+          Останні тести
         </h6>
         {!userForms.length ? (
           <div className="text-center bg-white shadow-md py-8 rounded-md space-y-2">
             <h6 className="text-gray-500 font-semibold text-lg">
-              Поки що немає форми
+              Поки що немає тесту
             </h6>
             <p className="text-gray-400">
-              Натисніть + для створення нової форми
+              Натисніть + для створення нового тесту
             </p>
           </div>
         ) : (
@@ -58,7 +59,7 @@ export default function Home() {
           <Response />
         </div>
       </div>
-      <NewFormButton />
+      {state.isAdmin && <NewFormButton />}
     </section>
   )
 }

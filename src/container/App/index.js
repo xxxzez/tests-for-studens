@@ -27,6 +27,9 @@ function App() {
       dispatch({ type: 'CHANGE_ISLOGIN', value: true })
       dispatch({ type: 'CHANGE_UID', value: uid })
     }
+    if (uid === 'g6liKhzlIPeke6XZwUnBYJJmxIJ2') {
+      dispatch({ type: 'SET_ADMIN' })
+    }
     return () => {
       dispatch({ type: 'CHANGE_ISLOGIN', value: false })
       dispatch({ type: 'CHANGE_UID', value: '' })

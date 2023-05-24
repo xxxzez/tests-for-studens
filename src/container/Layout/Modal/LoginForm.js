@@ -37,6 +37,9 @@ export const LoginForm = ({ isSignUp, setSignUp }) => {
         dispatch({ type: 'CHANGE_ISMODAL', value: false })
         dispatch({ type: 'CHANGE_UID', value: res.uid })
         dispatch({ type: 'CHANGE_ISLOGIN', value: true })
+        if (res.uid === 'g6liKhzlIPeke6XZwUnBYJJmxIJ2') {
+          dispatch({ type: 'SET_ADMIN' })
+        }
       })
       .catch((error) =>
         alert('login error\n' + error.message + '\ncode : ' + error.code)

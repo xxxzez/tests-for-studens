@@ -10,6 +10,7 @@ export const initialState = {
   isModal: false,
   isLogin: false,
   isLoading: false,
+  isAdmin: false,
   isEdit: true,
   uid: '',
   inputs: [],
@@ -27,6 +28,11 @@ export const reducer = (state, action) => {
       return {
         ...state,
         contentForms: action.value,
+      }
+    case 'SET_ADMIN':
+      return {
+        ...state,
+        isAdmin: true,
       }
     case 'CHANGE_ISANIMATESUBMITBUTTON':
       return {

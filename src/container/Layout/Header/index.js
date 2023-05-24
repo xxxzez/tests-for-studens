@@ -15,7 +15,7 @@ export default function Header() {
       {/* left  */}
       <Link to="/" className="flex items-center space-x-2">
         <img src={documentIcon} alt="logo" className="h-10 w-10" />
-        <h1 className="text-2xl">Форми</h1>
+        <h1 className="text-2xl">Платформа для проведення тестування "MNU"</h1>
       </Link>
       {/* right  */}
       <div className="space-x-6 flex items-center">
